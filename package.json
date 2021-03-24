@@ -1,0 +1,9 @@
+{
+  "name": "geo-route-generator",
+  "version": "1.0.0",
+  "description": "A library to generate geographical route between two points.",
+  "main": "./dist/index.js",
+  "repository": "git@github.com:JosemiChaves9/geo-route-generator.git",
+  "author": "Josemi Chaves <josemichaves@gmail.com>",
+  "license": "MIT"
+}
