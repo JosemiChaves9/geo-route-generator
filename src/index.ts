@@ -34,5 +34,3 @@ export function generateRoute(
 
   return route;
 }
-
-console.log(generateRoute());

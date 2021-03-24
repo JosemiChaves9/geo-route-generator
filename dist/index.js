@@ -24,4 +24,3 @@ function generateRoute(actualPos, finalPos, steps) {
     return route;
 }
 exports.generateRoute = generateRoute;
-console.log(generateRoute());
