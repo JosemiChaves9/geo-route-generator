@@ -25,12 +25,20 @@ export function generateRoute(
 
   const route = [];
 
-  for (let i = 0; i < steps; i++) {
-    route.push({
-      lat: (actual.lat -= distanceBetween.lat),
-      lng: (actual.lng -= distanceBetween.lng),
-    });
+  if (
+    isNaN(actualPos.lat) ||
+    isNaN(actualPos.lng) ||
+    isNaN(finalPos.lat) ||
+    isNaN(finalPos.lng)
+  ) {
+    throw Error('Data introduced is not a number');
+  } else {
+    for (let i = 0; i < steps; i++) {
+      route.push({
+        lat: (actual.lat -= distanceBetween.lat),
+        lng: (actual.lng -= distanceBetween.lng),
+      });
+    }
+    return route;
   }
-
-  return route;
 }
