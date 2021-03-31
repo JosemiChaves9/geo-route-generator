@@ -8,6 +8,15 @@ export function generateRoute(
   finalPos: coordinates,
   steps: number
 ) {
+  if (
+    isNaN(actualPos.lat) ||
+    isNaN(actualPos.lng) ||
+    isNaN(finalPos.lat) ||
+    isNaN(finalPos.lng)
+  ) {
+    throw Error('Data introduced is not a number');
+  }
+
   const actual = {
     lat: actualPos.lat,
     lng: actualPos.lng,
@@ -25,20 +34,11 @@ export function generateRoute(
 
   const route = [];
 
-  if (
-    isNaN(actualPos.lat) ||
-    isNaN(actualPos.lng) ||
-    isNaN(finalPos.lat) ||
-    isNaN(finalPos.lng)
-  ) {
-    throw Error('Data introduced is not a number');
-  } else {
-    for (let i = 0; i < steps; i++) {
-      route.push({
-        lat: (actual.lat -= distanceBetween.lat),
-        lng: (actual.lng -= distanceBetween.lng),
-      });
-    }
-    return route;
+  for (let i = 0; i < steps; i++) {
+    route.push({
+      lat: (actual.lat -= distanceBetween.lat),
+      lng: (actual.lng -= distanceBetween.lng),
+    });
   }
+  return route;
 }
