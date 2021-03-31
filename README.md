@@ -58,6 +58,18 @@ For the **Steps** parameter you need to specify how many points you route will h
 
 ---
 
+# Testing
+
+There's unit testing implemented, there's four use cases in where the coordinates have different scenarios, you can test it with
+
+`npm test`
+
+or
+
+`yarn test`
+
+---
+
 # OTHER SOURCES
 
 You can give it a ★ in [GitHub](https://github.com/JosemiChaves9/geo-route-generator)!
